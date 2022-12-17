@@ -4237,6 +4237,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Text.Cnds.CompareInstanceVar,
 		C3.Plugins.Browser.Exps.QueryParam,
+		C3.Plugins.System.Acts.SetGroupActive,
+		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Acts.GoToLayout
 	];
 };
@@ -4533,7 +4535,8 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0("mod");
-		}
+		},
+		() => "換景"
 ];
 
 
