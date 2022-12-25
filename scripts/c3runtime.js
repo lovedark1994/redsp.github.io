@@ -4240,7 +4240,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Browser.Exps.QueryParam,
 		C3.Plugins.System.Acts.SetGroupActive,
 		C3.Plugins.System.Cnds.IsGroupActive,
-		C3.Plugins.System.Acts.GoToLayout
+		C3.Plugins.System.Acts.GoToLayout,
+		C3.Plugins.List.Cnds.OnSelectionChanged,
+		C3.Plugins.List.Cnds.CompareSelection,
+		C3.Plugins.List.Exps.SelectedText,
+		C3.Plugins.AJAX.Acts.Post,
+		C3.Plugins.AJAX.Cnds.OnAnyComplete,
+		C3.Plugins.List.Acts.Select
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4264,6 +4270,15 @@ self.C3_JsPropNameTable = [
 	{鍵盤: 0},
 	{音頻: 0},
 	{黑幕: 0},
+	{公司: 0},
+	{公司2: 0},
+	{公司3: 0},
+	{公司4: 0},
+	{公司5: 0},
+	{初始金額: 0},
+	{按鈕2: 0},
+	{文字: 0},
+	{組別: 0},
 	{列表: 0},
 	{按鈕: 0},
 	{列表2: 0},
@@ -4277,6 +4292,7 @@ self.C3_JsPropNameTable = [
 	{引導: 0},
 	{起點: 0},
 	{Browser: 0},
+	{分數顯示: 0},
 	{答案: 0},
 	{輸入: 0},
 	{在下嗎: 0},
@@ -4288,7 +4304,10 @@ self.C3_JsPropNameTable = [
 	{角色名稱: 0},
 	{檔案編號: 0},
 	{是餵雞嗎: 0},
-	{模式: 0}
+	{模式: 0},
+	{web_app_url: 0},
+	{s: 0},
+	{開啟: 0}
 ];
 }
 
@@ -4452,6 +4471,7 @@ self.C3_ExpressionFuncs = [
 			const v4 = p._GetNode(4).GetVar();
 			return () => f0(f1(), (v2.GetValue() + (v3.GetValue() * v4.GetValue())), ",");
 		},
+		() => 25,
 		() => "對話",
 		() => "https://docs.google.com/spreadsheets/d/e/2PACX-1vSb3INXdMArYjs1lF8lgWLikwC0gS_RdlA4v8nGm1pqYqsjL_d5DCVDiO8oaUGq996aMsx1wLd54HIb/pub?output=csv",
 		() => "border",
@@ -4487,7 +4507,6 @@ self.C3_ExpressionFuncs = [
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => f0(f1("排"), 3);
 		},
-		() => 20,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
@@ -4542,7 +4561,21 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0("mod");
 		},
-		() => "換景"
+		() => "換景",
+		() => 666,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const n1 = p._GetNode(1);
+			const n2 = p._GetNode(2);
+			const n3 = p._GetNode(3);
+			const n4 = p._GetNode(4);
+			const n5 = p._GetNode(5);
+			const n6 = p._GetNode(6);
+			const n7 = p._GetNode(7);
+			return () => ((((((((((((and((v0.GetValue() + "?team="), n1.ExpObject()) + "&1=") + n2.ExpObject()) + "&2=") + n3.ExpObject()) + "&3=") + n4.ExpObject()) + "&4=") + n5.ExpObject()) + "&5=") + n6.ExpObject()) + "&start=") + n7.ExpObject());
+		},
+		() => "senddata",
+		() => "GET"
 ];
 
 
